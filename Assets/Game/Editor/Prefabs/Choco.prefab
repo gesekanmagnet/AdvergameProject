@@ -12,9 +12,10 @@ GameObject:
   - component: {fileID: 8019401105273588086}
   - component: {fileID: 3221886602950193810}
   - component: {fileID: 684662133313064940}
+  - component: {fileID: 8595124694459866081}
   m_Layer: 0
   m_Name: Choco
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -122,7 +123,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 4222299237860512103}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: ff9a4c06224950644b50d04f9555746a, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -198,3 +199,15 @@ PolygonCollider2D:
       - {x: 0.31112674, y: 0.045}
       - {x: 0.31112674, y: -0.94900006}
   m_UseDelaunayMesh: 0
+--- !u!114 &8595124694459866081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222299237860512103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413d846c909699e4dbe815ae30cfb121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
