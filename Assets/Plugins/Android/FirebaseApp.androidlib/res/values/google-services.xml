@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources xmlns:tools="http://schemas.android.com/tools" tools:keep="@string/gcm_defaultSenderId,@string/google_storage_bucket,@string/project_id,@string/google_api_key,@string/google_crash_reporting_api_key,@string/google_app_id,@string/default_android_client_id,@string/default_web_client_id">
+  <string name="gcm_defaultSenderId" translatable="false">168620549286</string>
+  <string name="google_storage_bucket" translatable="false">morse-7b37a.appspot.com</string>
+  <string name="project_id" translatable="false">morse-7b37a</string>
+  <string name="google_api_key" translatable="false">AIzaSyDgHkOt0wYQVfBZrs4H3hZxpexRluXjBPA</string>
+  <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDgHkOt0wYQVfBZrs4H3hZxpexRluXjBPA</string>
+  <string name="google_app_id" translatable="false">1:168620549286:android:7f472a956fbaae7ec94067</string>
+  <string name="default_android_client_id" translatable="false">168620549286-hjv7cghak32htbio5neh446n8jkhr5i1.apps.googleusercontent.com</string>
+  <string name="default_web_client_id" translatable="false">168620549286-jgukhcf1j25m752f5d82uo8numcetiu1.apps.googleusercontent.com</string>
+</resources>

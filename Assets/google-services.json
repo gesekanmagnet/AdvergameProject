@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "168620549286",
+    "project_id": "morse-7b37a",
+    "storage_bucket": "morse-7b37a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:168620549286:android:7f472a956fbaae7ec94067",
+        "android_client_info": {
+          "package_name": "com.Beyaka.Advergame"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "168620549286-hjv7cghak32htbio5neh446n8jkhr5i1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.Beyaka.Advergame",
+            "certificate_hash": "baac4c4363b871efff0718164b0927f83273d457"
+          }
+        },
+        {
+          "client_id": "168620549286-jgukhcf1j25m752f5d82uo8numcetiu1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDgHkOt0wYQVfBZrs4H3hZxpexRluXjBPA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "168620549286-jgukhcf1j25m752f5d82uo8numcetiu1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
