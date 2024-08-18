@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 8301676266639722725}
   - component: {fileID: 8019401105273588086}
   - component: {fileID: 3221886602950193810}
-  - component: {fileID: 684662133313064940}
   - component: {fileID: 8595124694459866081}
+  - component: {fileID: 815231506485592554}
   m_Layer: 0
   m_Name: Choco
   m_TagString: Player
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3f50e7dd0ad85784ea30b3385ac27880, type: 3}
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: ae526eef80ee9d042a8274db41addfb8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 6200000, guid: ff9a4c06224950644b50d04f9555746a, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -114,8 +114,21 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!60 &684662133313064940
-PolygonCollider2D:
+--- !u!114 &8595124694459866081
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4222299237860512103}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 413d846c909699e4dbe815ae30cfb121, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _skip: 0
+--- !u!61 &815231506485592554
+BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -123,7 +136,7 @@ PolygonCollider2D:
   m_GameObject: {fileID: 4222299237860512103}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 6200000, guid: ff9a4c06224950644b50d04f9555746a, type: 2}
+  m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -150,64 +163,12 @@ PolygonCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.6222535, y: 2.039}
+    oldSize: {x: 1.06, y: 1.06}
     newSize: {x: 0.6222535, y: 2.039}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Points:
-    m_Paths:
-    - - {x: 0.2926192, y: -0.9865}
-      - {x: 0.27261105, y: -1.0040001}
-      - {x: 0.24660045, y: -1.0175}
-      - {x: -0.23559597, y: -1.019}
-      - {x: -0.26510796, y: -1.008}
-      - {x: -0.28811738, y: -0.9875}
-      - {x: -0.30012226, y: -0.96650004}
-      - {x: -0.30462408, y: -0.93500006}
-      - {x: -0.31112674, y: 0.0615}
-      - {x: -0.29762122, y: 0.14150001}
-      - {x: -0.28861758, y: 0.16600001}
-      - {x: -0.27361146, y: 0.19950001}
-      - {x: -0.2536033, y: 0.23250002}
-      - {x: -0.23309495, y: 0.2605}
-      - {x: -0.1605654, y: 0.32750005}
-      - {x: -0.13755603, y: 0.3675}
-      - {x: -0.12655155, y: 0.4135}
-      - {x: -0.11654747, y: 0.86950004}
-      - {x: -0.12305012, y: 0.89250004}
-      - {x: -0.123550326, y: 0.9545001}
-      - {x: -0.123550326, y: 1.0195}
-      - {x: 0.12154951, y: 1.0195}
-      - {x: 0.12154951, y: 0.953}
-      - {x: 0.123550326, y: 0.934}
-      - {x: 0.12254992, y: 0.91400003}
-      - {x: 0.12254992, y: 0.8910001}
-      - {x: 0.11804809, y: 0.86800003}
-      - {x: 0.115046866, y: 0.768}
-      - {x: 0.11554707, y: 0.66550004}
-      - {x: 0.11804809, y: 0.46300003}
-      - {x: 0.120549105, y: 0.40350002}
-      - {x: 0.12905256, y: 0.3785}
-      - {x: 0.14956091, y: 0.34700003}
-      - {x: 0.16906887, y: 0.32450002}
-      - {x: 0.22008966, y: 0.27650002}
-      - {x: 0.25560412, y: 0.22700001}
-      - {x: 0.28511614, y: 0.1755}
-      - {x: 0.30312347, y: 0.1215}
-      - {x: 0.31112674, y: 0.045}
-      - {x: 0.31112674, y: -0.94900006}
-  m_UseDelaunayMesh: 0
---- !u!114 &8595124694459866081
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4222299237860512103}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 413d846c909699e4dbe815ae30cfb121, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  serializedVersion: 2
+  m_Size: {x: 1.06, y: 1.06}
+  m_EdgeRadius: 0

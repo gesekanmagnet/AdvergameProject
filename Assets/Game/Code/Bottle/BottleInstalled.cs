@@ -18,6 +18,8 @@ namespace Beyaka.Bottle
         {
             bottle.SwitchState(bottle.bottleFall);
 
+            GameController.Instance.AddScore();
+
             if (bottle.skip) return;
 
             if(collision.collider.CompareTag(bottle.tag) == false)

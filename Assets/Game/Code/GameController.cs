@@ -10,8 +10,11 @@ namespace Beyaka
         public Action OnGameStart { get; set; } = delegate { };
         public Action OnGameOver { get; set; } = delegate { };
         public Action OnClick { get; set; } = delegate { };
+        public Action OnScoring { get; set; } = delegate { };
 
         public static GameController Instance { get; private set; }
+
+        public int Score { get; private set; }
 
         private void Awake()
         {
@@ -27,6 +30,12 @@ namespace Beyaka
         public void Up()
         {
             transform.position += offset;
+        }
+
+        public void AddScore()
+        {
+            Score++;
+            OnScoring();
         }
     }
 }
