@@ -20,7 +20,9 @@ public class FirebaseController : MonoBehaviour
 
     public void OnGoogleSignInSuccess(string userName)
     {
-        SceneManager.LoadScene(1);
+        //SceneManager.LoadScene(1);
+        loginButton.SetActive(false);
+        playButton.SetActive(true);
     }
 
     public void OnGoogleSignInFail(string errorMessage)
