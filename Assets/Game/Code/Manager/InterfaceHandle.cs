@@ -20,7 +20,7 @@ namespace Beyaka.Manager
 
         private void UpdateUI()
         {
-            scoreText.text = GameController.Instance.Score.ToString();
+            scoreText.text = GameController.Instance.GetScore().ToString();
         }
     }
 }

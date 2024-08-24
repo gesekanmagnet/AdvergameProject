@@ -17,7 +17,9 @@ namespace Beyaka.Bottle
         public override void OnCollide(BottleBase bottle, Collision2D collision)
         {
             if(collision.collider.CompareTag(bottle.tag) == false)
+            {
                 GameController.Instance.OnGameOver();
+            }
         }
     }
 }

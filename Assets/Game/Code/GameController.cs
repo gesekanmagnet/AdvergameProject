@@ -6,6 +6,8 @@ namespace Beyaka
     {
         [SerializeField] private Vector3 offset;
 
+        private int score{ get; set; }
+
         public delegate void Action();
         public Action OnGameStart { get; set; } = delegate { };
         public Action OnGameOver { get; set; } = delegate { };
@@ -13,8 +15,6 @@ namespace Beyaka
         public Action OnScoring { get; set; } = delegate { };
 
         public static GameController Instance { get; private set; }
-
-        public int Score { get; private set; }
 
         private void Awake()
         {
@@ -34,8 +34,13 @@ namespace Beyaka
 
         public void AddScore()
         {
-            Score++;
+            score++;
             OnScoring();
+        }
+
+        public int GetScore()
+        {
+            return score;
         }
     }
 }
