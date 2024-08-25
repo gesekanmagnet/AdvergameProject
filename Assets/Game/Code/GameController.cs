@@ -1,3 +1,4 @@
+using DG.Tweening;
 using UnityEngine;
 
 namespace Beyaka
@@ -29,7 +30,7 @@ namespace Beyaka
 
         public void Up()
         {
-            transform.position += offset;
+            transform.DOMoveY(transform.position.y + 1, 1);
         }
 
         public void AddScore()
