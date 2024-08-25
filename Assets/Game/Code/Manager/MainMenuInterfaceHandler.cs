@@ -26,9 +26,9 @@ namespace Beyaka.Manager
         private void ShowMainMenu()
         {
             if(IsSignedIn())
-                menuPanel.SetActive(true);
+                menuPanel.SetActive(false);
             else
-                loginPanel.SetActive(true);
+                loginPanel.SetActive(false);
         }
 
         private bool IsSignedIn()
