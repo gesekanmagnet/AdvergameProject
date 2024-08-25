@@ -3,8 +3,10 @@ using UnityEngine.EventSystems;
 
 namespace Beyaka.Player
 {
-    public class InputHandler : MonoBehaviour
+    public class InputHandle : MonoBehaviour
     {
+        private bool canPlay = true;
+
         private void Update()
         {
             if (Input.GetButtonDown("Fire1"))
@@ -33,6 +35,21 @@ namespace Beyaka.Player
             //}
         }
 
+        private void OnEnable()
+        {
+            GameController.Instance.OnGameOver += DisableInput;
+        }
+
+        private void OnDisable()
+        {
+            GameController.Instance.OnGameOver -= DisableInput;
+        }
+
+        private void DisableInput()
+        {
+            canPlay = false;
+        }
+
         private bool IsPointerOverUI()
         {
             // Untuk mouse di desktop
@@ -56,6 +73,7 @@ namespace Beyaka.Player
 
         private void HandleTap()
         {
+            if(canPlay)
             GameController.Instance.OnClick();
         }
     }

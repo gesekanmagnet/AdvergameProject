@@ -13,12 +13,12 @@ public class FirebaseController : MonoBehaviour
     private static extern void GetScore();
 
     public delegate void LoginAction(string userName);
-    public LoginAction OnLoginSuccess = delegate { };
-    public LoginAction OnLoginFailure = delegate { };
+    public LoginAction OnLoginSuccess { get; set; } = delegate { };
+    public LoginAction OnLoginFailure { get; set; } = delegate { };
 
     public static FirebaseController Instance { get; private set; }
 
-    public string currentActiveUsername { get; private set; }
+    public string currentActiveUsername { get; private set; } = null;
 
     private void Awake()
     {

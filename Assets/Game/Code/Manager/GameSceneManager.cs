@@ -7,18 +7,22 @@ namespace Beyaka.Manager
     {
         private void OnEnable()
         {
-            GameController.Instance.OnGameOver += RestartGame;
+            GameController.Instance.OnGameOver += SaveScore;
         }
 
         private void OnDisable()
         {
-            GameController.Instance.OnGameOver -= RestartGame;
+            GameController.Instance.OnGameOver -= SaveScore;
         }
 
-        private void RestartGame()
+        private void SaveScore()
         {
-            SceneManager.LoadScene(1);
             FirebaseController.Instance.SaveCurrentScore(GameController.Instance.GetScore());
+        }
+
+        public void LoadScene(int x)
+        {
+            SceneManager.LoadScene(x);
         }
     }
 }
