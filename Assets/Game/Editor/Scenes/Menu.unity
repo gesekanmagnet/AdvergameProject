@@ -1503,8 +1503,8 @@ MonoBehaviour:
   welcomeText: {fileID: 1828237078}
   loginButton: {fileID: 254138683}
   resumeButton: {fileID: 711127614}
-  loginPanel: {fileID: 0}
-  menuPanel: {fileID: 0}
+  loginPanel: {fileID: 1764749191}
+  menuPanel: {fileID: 1819707256}
 --- !u!1 &766707962
 GameObject:
   m_ObjectHideFlags: 0
