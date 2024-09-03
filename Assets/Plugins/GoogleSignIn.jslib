@@ -68,5 +68,32 @@ mergeInto(LibraryManager.library, {
             console.log('No user is signed in.');
             Module.SendMessage('FirebaseController', 'OnReceiveScore', 'No user');
         }
+    },
+
+    GetTopScores: function() {
+        if (typeof firebase === 'undefined') {
+            console.error('Firebase is not defined.');
+            return;
+        }
+
+        firebase.firestore().collection('scores')
+            .orderBy('score', 'desc')
+            .limit(10)
+            .get()
+            .then(function(querySnapshot) {
+                var leaderboardData = [];
+                querySnapshot.forEach(function(doc) {
+                    leaderboardData.push({
+                        username: doc.data().username,
+                        score: doc.data().score
+                    });
+                });
+                // Kirim data leaderboard ke Unity dalam bentuk JSON
+                Module.SendMessage('FirebaseController', 'OnReceiveTopScores', JSON.stringify(leaderboardData));
+            })
+            .catch(function(error) {
+                console.error('Error getting leaderboard:', error);
+                Module.SendMessage('FirebaseController', 'OnReceiveTopScores', 'Error');
+            });
     }
 });

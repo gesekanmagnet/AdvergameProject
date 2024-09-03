@@ -16,6 +16,10 @@ namespace Beyaka.Bottle
 
         public override void OnCollide(BottleBase bottle, Collision2D collision)
         {
+            //Rigidbody2D rb = bottle.GetComponent<Rigidbody2D>();
+            //rb.freezeRotation = true;
+            //rb.isKinematic = true;
+
             bottle.SwitchState(bottle.bottleFall);
 
             GameController.Instance.AddScore();

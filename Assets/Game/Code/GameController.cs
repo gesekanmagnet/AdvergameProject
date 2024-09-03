@@ -30,7 +30,7 @@ namespace Beyaka
 
         public void Up()
         {
-            transform.DOMoveY(transform.position.y + 1, 1);
+            transform.DOMoveY(transform.position.y + 1.5f, 1);
         }
 
         public void AddScore()

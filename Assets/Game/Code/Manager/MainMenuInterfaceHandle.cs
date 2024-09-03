@@ -3,7 +3,7 @@ using TMPro;
 
 namespace Beyaka.Manager
 {
-    public class MainMenuInterfaceHandler : MonoBehaviour
+    public class MainMenuInterfaceHandle : MonoBehaviour
     {
         [SerializeField] private TMP_Text welcomeText;
         [SerializeField] private GameObject loginButton, resumeButton;
