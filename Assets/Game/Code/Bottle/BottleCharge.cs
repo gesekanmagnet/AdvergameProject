@@ -25,6 +25,10 @@ namespace Beyaka.Bottle
                 if (bottle.skip) return;
             
             GameController.Instance.OnGameOver();
-        }   
+        }
+
+        public override void OnTrigger(BottleBase bottle, Collider2D collider)
+        {
+        }
     }
 }

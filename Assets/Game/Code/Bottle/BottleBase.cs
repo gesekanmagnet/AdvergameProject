@@ -13,6 +13,7 @@ namespace Beyaka.Bottle
         public BottleFall bottleFall { get; } = new BottleFall();
 
         public bool skip { get { return _skip; } }
+        public bool boxBanned { get; set; }
 
         private void Start()
         {
@@ -23,6 +24,11 @@ namespace Beyaka.Bottle
         private void OnCollisionEnter2D(Collision2D collision)
         {
             currentState.OnCollide(this, collision);
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            currentState.OnTrigger(this, collision);
         }
 
         public void SwitchState(BottleState state)

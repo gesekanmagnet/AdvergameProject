@@ -56,7 +56,7 @@ mergeInto(LibraryManager.library, {
             .then(function(doc) {
                 if (doc.exists) {
                     // Ambil nilai skor dari dokumen
-                    var score = doc.data().score || 0;
+                    var score = doc.data().score;
                     // Kirim skor ke Unity
                     Module.SendMessage('FirebaseController', 'OnReceiveScore', score.toString());
                 } else {

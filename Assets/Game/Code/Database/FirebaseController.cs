@@ -82,6 +82,10 @@ public class FirebaseController : MonoBehaviour
         {
             currentScore = gg;
         }
+        else
+        {
+            currentScore = 0;
+        }
     }
 
     public void GetLeaderboard()

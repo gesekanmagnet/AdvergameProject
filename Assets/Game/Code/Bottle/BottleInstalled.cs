@@ -16,10 +16,6 @@ namespace Beyaka.Bottle
 
         public override void OnCollide(BottleBase bottle, Collision2D collision)
         {
-            //Rigidbody2D rb = bottle.GetComponent<Rigidbody2D>();
-            //rb.freezeRotation = true;
-            //rb.isKinematic = true;
-
             bottle.SwitchState(bottle.bottleFall);
 
             GameController.Instance.AddScore();
@@ -32,6 +28,15 @@ namespace Beyaka.Bottle
                 return;
             }
             GameController.Instance.Up();
+        }
+
+        public override void OnTrigger(BottleBase bottle, Collider2D collider)
+        {
+            if (collider.gameObject == bottle.gameObject) return;
+            Debug.Log(collider.gameObject.name);
+            Rigidbody2D rb = bottle.GetComponent<Rigidbody2D>();
+            rb.freezeRotation = true;
+            rb.constraints = RigidbodyConstraints2D.FreezePosition;
         }
     }
 }

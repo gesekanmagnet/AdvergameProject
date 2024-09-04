@@ -8,13 +8,17 @@ namespace Beyaka.Manager
         [SerializeField] private TMP_Text welcomeText;
         [SerializeField] private GameObject loginButton, resumeButton;
         [SerializeField] private GameObject loginPanel, menuPanel;
+        [SerializeField] private GameObject betaPanel;
+
+        private void Start()
+        {
+            ShowMainMenu();
+        }
 
         private void OnEnable()
         {
             FirebaseController.Instance.OnLoginSuccess += UpdateUI;
             FirebaseController.Instance.OnLoginFailure += UpdateUIFailure;
-
-            ShowMainMenu();
         }
 
         private void OnDisable()
@@ -25,19 +29,20 @@ namespace Beyaka.Manager
 
         private void ShowMainMenu()
         {
+            FirebaseController.Instance.GetCurrentScore();
+            
             if(IsSignedIn())
             {
                 menuPanel.SetActive(true);
                 loginPanel.SetActive(false);
-
+                betaPanel.SetActive(false);
             }
             else
             {
                 loginPanel.SetActive(true);
                 menuPanel.SetActive(false);
+                betaPanel.SetActive(true);
             }
-            
-            FirebaseController.Instance.GetCurrentScore();
         }
 
         private bool IsSignedIn()
