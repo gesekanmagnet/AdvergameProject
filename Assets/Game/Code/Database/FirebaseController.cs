@@ -30,6 +30,8 @@ public class FirebaseController : MonoBehaviour
 
     public string currentActiveUsername { get; private set; } = null;
 
+    public int currentScore { get; private set; }
+
     private void Awake()
     {
         if(Instance != null && Instance != this)
@@ -66,6 +68,20 @@ public class FirebaseController : MonoBehaviour
     public void SaveCurrentScore(int score)
     {
         SaveScore(score);
+    }
+
+    public void GetCurrentScore()
+    {
+        GetScore();
+    }
+
+    public void OnReceiveScore(string score)
+    {
+        int gg;
+        if(int.TryParse(score, out gg))
+        {
+            currentScore = gg;
+        }
     }
 
     public void GetLeaderboard()

@@ -17,6 +17,9 @@ namespace Beyaka.Manager
 
         private void SaveScore()
         {
+            if (GameController.Instance.GetScore() < FirebaseController.Instance.currentScore)
+                return;
+           
             FirebaseController.Instance.SaveCurrentScore(GameController.Instance.GetScore());
         }
 

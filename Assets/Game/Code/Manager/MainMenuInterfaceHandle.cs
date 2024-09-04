@@ -29,12 +29,15 @@ namespace Beyaka.Manager
             {
                 menuPanel.SetActive(true);
                 loginPanel.SetActive(false);
+
             }
             else
             {
                 loginPanel.SetActive(true);
                 menuPanel.SetActive(false);
             }
+            
+            FirebaseController.Instance.GetCurrentScore();
         }
 
         private bool IsSignedIn()

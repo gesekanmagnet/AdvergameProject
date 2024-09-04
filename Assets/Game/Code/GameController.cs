@@ -5,8 +5,6 @@ namespace Beyaka
 {
     public class GameController : MonoBehaviour
     {
-        [SerializeField] private Vector3 offset;
-
         private int score{ get; set; }
 
         public delegate void Action();

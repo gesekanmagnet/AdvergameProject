@@ -5,7 +5,7 @@ namespace Beyaka.Player
 {
     public class InputHandle : MonoBehaviour
     {
-        private bool canPlay = true;
+        private bool canPlay { get; set; } = true;
 
         private void Update()
         {
@@ -37,12 +37,19 @@ namespace Beyaka.Player
 
         private void OnEnable()
         {
+            GameController.Instance.OnScoring += EnableInput;
             GameController.Instance.OnGameOver += DisableInput;
         }
 
         private void OnDisable()
         {
+            GameController.Instance.OnScoring -= EnableInput;
             GameController.Instance.OnGameOver -= DisableInput;
+        }
+
+        private void EnableInput()
+        {
+            canPlay = true;
         }
 
         private void DisableInput()
@@ -74,7 +81,10 @@ namespace Beyaka.Player
         private void HandleTap()
         {
             if(canPlay)
-            GameController.Instance.OnClick();
+            {
+                GameController.Instance.OnClick();
+                DisableInput();
+            }
         }
     }
 }

@@ -55,7 +55,10 @@ mergeInto(LibraryManager.library, {
             firebase.firestore().collection('scores').doc(userId).get()
             .then(function(doc) {
                 if (doc.exists) {
-                    Module.SendMessage('FirebaseController', 'OnReceiveScore', JSON.stringify(doc.data()));
+                    // Ambil nilai skor dari dokumen
+                    var score = doc.data().score || 0;
+                    // Kirim skor ke Unity
+                    Module.SendMessage('FirebaseController', 'OnReceiveScore', score.toString());
                 } else {
                     Module.SendMessage('FirebaseController', 'OnReceiveScore', 'No score found');
                 }
