@@ -29,8 +29,6 @@ namespace Beyaka.Manager
 
         private void ShowMainMenu()
         {
-            FirebaseController.Instance.GetCurrentScore();
-            
             if(IsSignedIn())
             {
                 menuPanel.SetActive(true);

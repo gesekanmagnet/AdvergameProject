@@ -8,7 +8,6 @@ namespace Beyaka.Bottle
         [SerializeField] private bool _skip;
 
         private BottleState currentState;
-        public BottleCharge bottleCharge { get; } = new BottleCharge();
         public BottleInstalled bottleInstalled { get; } = new BottleInstalled();
         public BottleFall bottleFall { get; } = new BottleFall();
 

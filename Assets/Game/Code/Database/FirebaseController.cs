@@ -30,6 +30,7 @@ public class FirebaseController : MonoBehaviour
 
     public string currentActiveUsername { get; private set; } = null;
 
+    public bool easyMode { get; private set; }
     public int currentScore { get; private set; }
 
     private void Awake()
@@ -54,6 +55,7 @@ public class FirebaseController : MonoBehaviour
     {
         OnLoginSuccess(userName);
         currentActiveUsername = userName;
+        GetCurrentScore();
         //SceneManager.LoadScene(1);
         //loginButton.SetActive(false);
         //playButton.SetActive(true);
@@ -68,6 +70,7 @@ public class FirebaseController : MonoBehaviour
     public void SaveCurrentScore(int score)
     {
         SaveScore(score);
+        currentScore = score;
     }
 
     public void GetCurrentScore()
@@ -105,6 +108,11 @@ public class FirebaseController : MonoBehaviour
         {
             Debug.LogError("Error fetching leaderboard data.");
         }
+    }
+
+    public void SetMode(bool x)
+    {
+        easyMode = x;
     }
 }
 

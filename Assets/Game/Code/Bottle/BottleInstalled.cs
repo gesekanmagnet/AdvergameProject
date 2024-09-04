@@ -32,6 +32,7 @@ namespace Beyaka.Bottle
 
         public override void OnTrigger(BottleBase bottle, Collider2D collider)
         {
+            if (FirebaseController.Instance.easyMode == false) return;
             if (collider.gameObject == bottle.gameObject) return;
             Debug.Log(collider.gameObject.name);
             Rigidbody2D rb = bottle.GetComponent<Rigidbody2D>();
