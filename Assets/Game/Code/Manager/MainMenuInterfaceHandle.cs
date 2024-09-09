@@ -12,7 +12,7 @@ namespace Beyaka.Manager
 
         private void Start()
         {
-            ShowMainMenu();
+            //ShowMainMenu();
         }
 
         private void OnEnable()
