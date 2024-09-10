@@ -9,7 +9,6 @@ namespace Beyaka.Manager
         [SerializeField] private GameObject loginButton, resumeButton;
         [SerializeField] private GameObject loginPanel, menuPanel;
         [SerializeField] private GameObject betaPanel;
-
         private void Start()
         {
             ShowMainMenu();
