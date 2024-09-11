@@ -36,5 +36,10 @@ namespace Beyaka.Manager
                 }
             }
         }
+
+        public void OpenLeaderboard()
+        {
+            FirebaseController.Instance.GetLeaderboard();
+        }
     }
 }

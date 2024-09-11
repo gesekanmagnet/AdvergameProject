@@ -20,6 +20,7 @@ namespace Beyaka.Manager
         {
             popup.DOMove(point.position, duration).SetEase(Ease.InExpo);
         }
+
         public void BackPopup(Transform popup)
         {
             popup.DOMove(startPos, duration).SetEase(Ease.InExpo);

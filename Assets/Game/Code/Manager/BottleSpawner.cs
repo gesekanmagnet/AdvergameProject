@@ -14,6 +14,7 @@ namespace Beyaka.Manager
         private void OnEnable()
         {
             GameController.Instance.OnClick += SpawnBottle;
+            GameController.Instance.OnScoring += DisplaySprite;
 
             SpriteBoxLoop();
         }
@@ -21,6 +22,12 @@ namespace Beyaka.Manager
         private void OnDisable()
         {
             GameController.Instance.OnClick -= SpawnBottle;
+            GameController.Instance.OnScoring -= DisplaySprite;
+        }
+
+        private void DisplaySprite()
+        {
+            capit.gameObject.SetActive(true);
         }
 
         private void SpawnBottle()
@@ -33,6 +40,7 @@ namespace Beyaka.Manager
         private void SpriteBoxLoop()
         {
             randomValue = RandomValue();
+            capit.gameObject.SetActive(false);
             capitSprite.sprite = boxIcons[randomValue];
         }
 

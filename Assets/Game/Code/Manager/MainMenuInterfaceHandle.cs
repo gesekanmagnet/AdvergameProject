@@ -8,7 +8,7 @@ namespace Beyaka.Manager
         [SerializeField] private TMP_Text welcomeText;
         [SerializeField] private GameObject loginButton, resumeButton;
         [SerializeField] private GameObject loginPanel, menuPanel;
-        [SerializeField] private GameObject betaPanel;
+        //[SerializeField] private GameObject betaPanel;
         private void Start()
         {
             ShowMainMenu();
@@ -32,13 +32,13 @@ namespace Beyaka.Manager
             {
                 menuPanel.SetActive(true);
                 loginPanel.SetActive(false);
-                betaPanel.SetActive(false);
+                //betaPanel.SetActive(false);
             }
             else
             {
                 loginPanel.SetActive(true);
                 menuPanel.SetActive(false);
-                betaPanel.SetActive(true);
+                //betaPanel.SetActive(true);
             }
         }
 
