@@ -25,6 +25,9 @@ namespace Beyaka.Manager
 
         public void LoadScene(int x)
         {
+            if (x == 1)
+                FirebaseController.Instance.SaveCurrentBattery(FirebaseController.Instance.currentBattery - 1);
+
             SceneManager.LoadScene(x);
         }
     }

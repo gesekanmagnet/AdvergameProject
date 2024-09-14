@@ -6,6 +6,7 @@ public class SceneLoader : MonoBehaviour
 {
     public void LoadScene()
     {
+        FirebaseController.Instance.SaveCurrentBattery(FirebaseController.Instance.currentBattery - 1);
         SceneManager.LoadScene("SampleScene");
     }
 }

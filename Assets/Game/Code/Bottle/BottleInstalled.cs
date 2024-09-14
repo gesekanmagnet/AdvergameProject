@@ -27,6 +27,8 @@ namespace Beyaka.Bottle
                 GameController.Instance.OnGameOver();
                 return;
             }
+
+            GameController.Instance.invisibleTerrain.position = bottle.transform.position;
             GameController.Instance.Up();
         }
 

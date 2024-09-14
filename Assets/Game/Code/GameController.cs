@@ -5,6 +5,8 @@ namespace Beyaka
 {
     public class GameController : MonoBehaviour
     {
+        [SerializeField] private Transform invisibleTerain;
+
         private int score{ get; set; }
 
         public delegate void Action();
@@ -14,6 +16,8 @@ namespace Beyaka
         public Action OnScoring { get; set; } = delegate { };
 
         public static GameController Instance { get; private set; }
+
+        public Transform invisibleTerrain { get { return invisibleTerain; } }
 
         private void Awake()
         {

@@ -98,5 +98,57 @@ mergeInto(LibraryManager.library, {
                 console.error('Error getting leaderboard:', error);
                 Module.SendMessage('FirebaseController', 'OnReceiveTopScores', 'Error');
             });
+    },
+
+    SaveBattery: function(battery) {
+        if (typeof firebase === 'undefined') {
+            console.error('Firebase is not defined.');
+            return;
+        }
+
+        var user = firebase.auth().currentUser;
+        if (user) {
+            var userId = user.uid;
+            firebase.firestore().collection('scores').doc(userId).set({
+                battery: battery // Simpan nilai battery
+            }, { merge: true }) // Use merge to avoid overwriting other fields
+            .then(function() {
+                console.log('Battery saved successfully');
+            })
+            .catch(function(error) {
+                console.error('Error saving battery:', error);
+            });
+        } else {
+            console.log('No user is signed in.');
+        }
+    },
+
+    GetBattery: function() {
+        if (typeof firebase === 'undefined') {
+            console.error('Firebase is not defined.');
+            return;
+        }
+
+        var user = firebase.auth().currentUser;
+        if (user) {
+            var userId = user.uid;
+            firebase.firestore().collection('scores').doc(userId).get()
+            .then(function(doc) {
+                if (doc.exists) {
+                    var battery = doc.data().battery || 0; // Set default to 0 if battery is not found
+                    // Kirim nilai battery ke Unity
+                    Module.SendMessage('FirebaseController', 'OnReceiveBattery', battery.toString());
+                } else {
+                    Module.SendMessage('FirebaseController', 'OnReceiveBattery', '0');
+                }
+            })
+            .catch(function(error) {
+                console.error('Error getting battery:', error);
+                Module.SendMessage('FirebaseController', 'OnReceiveBattery', 'Error');
+            });
+        } else {
+            console.log('No user is signed in.');
+            Module.SendMessage('FirebaseController', 'OnReceiveBattery', 'No user');
+        }
     }
 });

@@ -1,5 +1,6 @@
 using UnityEngine;
 using TMPro;
+using UnityEngine.UI;
 
 namespace Beyaka.Manager
 {
@@ -8,7 +9,9 @@ namespace Beyaka.Manager
         [SerializeField] private TMP_Text welcomeText;
         [SerializeField] private GameObject loginButton, resumeButton;
         [SerializeField] private GameObject loginPanel, menuPanel;
+        [SerializeField] private Slider batterySlider;
         //[SerializeField] private GameObject betaPanel;
+
         private void Start()
         {
             ShowMainMenu();
@@ -33,6 +36,7 @@ namespace Beyaka.Manager
                 menuPanel.SetActive(true);
                 loginPanel.SetActive(false);
                 //betaPanel.SetActive(false);
+                //UpdateBattery(string.Empty);
             }
             else
             {
@@ -55,6 +59,7 @@ namespace Beyaka.Manager
             welcomeText.text = user;
             loginButton.SetActive(false);
             resumeButton.SetActive(true);  
+            //batterySlider.value = FirebaseController.Instance.currentBattery;
         }
 
         private void UpdateUIFailure(string user)

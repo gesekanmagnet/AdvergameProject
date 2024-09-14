@@ -19,6 +19,12 @@ public class FirebaseController : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void GetTopScores();
 
+    [DllImport("__Internal")]
+    private static extern void SaveBattery(int battery);
+
+    [DllImport("__Internal")]
+    private static extern void GetBattery();
+
     public delegate void LoginAction(string userName);
     public LoginAction OnLoginSuccess { get; set; } = delegate { };
     public LoginAction OnLoginFailure { get; set; } = delegate { };
@@ -32,6 +38,7 @@ public class FirebaseController : MonoBehaviour
 
     public bool easyMode { get; private set; }
     public int currentScore { get; private set; }
+    public int currentBattery { get; private set; }
 
     private void Awake()
     {
@@ -56,14 +63,11 @@ public class FirebaseController : MonoBehaviour
         OnLoginSuccess(userName);
         currentActiveUsername = userName;
         GetCurrentScore();
-        //SceneManager.LoadScene(1);
-        //loginButton.SetActive(false);
-        //playButton.SetActive(true);
+        GetCurrentBattery();
     }
 
     public void OnGoogleSignInFail(string errorMessage)
     {
-        //welcomeText.text = "Login gagal: " + errorMessage;
         OnLoginFailure(errorMessage);
     }
 
@@ -73,17 +77,17 @@ public class FirebaseController : MonoBehaviour
         currentScore = score;
     }
 
-    public void GetCurrentScore()
+    private void GetCurrentScore()
     {
         GetScore();
     }
 
     public void OnReceiveScore(string score)
     {
-        int gg;
-        if(int.TryParse(score, out gg))
+        int scoreValue;
+        if(int.TryParse(score, out scoreValue))
         {
-            currentScore = gg;
+            currentScore = scoreValue;
         }
         else
         {
@@ -113,6 +117,30 @@ public class FirebaseController : MonoBehaviour
     public void SetMode(bool x)
     {
         easyMode = x;
+    }
+
+    public void OnReceiveBattery(string battery)
+    {
+        int batteryValue;
+        if (int.TryParse(battery, out batteryValue))
+        {
+            currentBattery = batteryValue;
+        }
+        else
+        {
+            currentBattery = 0;
+        }
+    }
+
+    private void GetCurrentBattery()
+    {
+        GetBattery();
+    }
+
+    public void SaveCurrentBattery(int battery)
+    {
+        SaveBattery(battery);
+        currentBattery = battery;
     }
 }
 
