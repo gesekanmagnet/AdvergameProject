@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 using TMPro;
 
 using Beyaka.Manager;
@@ -37,7 +38,7 @@ namespace Beyaka.Utilities
             sisaBatteryText.text = "Sisa Battery " + FirebaseController.Instance.currentBattery + "/3";
         }
 
-        public void RechargeBattery(TMP_InputField input)
+        public void RechargeBattery(InputField input)
         {
             if(input.text == password3Battery)
                 FirebaseController.Instance.SaveCurrentBattery(3);
