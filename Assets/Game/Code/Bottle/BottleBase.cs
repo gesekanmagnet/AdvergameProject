@@ -7,7 +7,7 @@ namespace Beyaka.Bottle
     {
         [SerializeField] private bool _skip;
 
-        private BottleState currentState;
+        public BottleState currentState { get; private set; }
         public BottleInstalled bottleInstalled { get; } = new BottleInstalled();
         public BottleFall bottleFall { get; } = new BottleFall();
 

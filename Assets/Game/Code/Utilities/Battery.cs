@@ -2,16 +2,18 @@ using UnityEngine;
 using TMPro;
 
 using Beyaka.Manager;
-using UnityEngine.UI;
 
 namespace Beyaka.Utilities
 {
     public class Battery : MonoBehaviour
     {
         [SerializeField] private TweenerStack tweenerStack;
+        [SerializeField] private GameObject battery;
         [SerializeField] private Transform stackConfirm, stackNotConfirm;
 
         [SerializeField] private TMP_Text sisaBatteryText;
+
+        [SerializeField] private string password3Battery, password99Battery;
 
         private void OnEnable()
         {
@@ -33,6 +35,19 @@ namespace Beyaka.Utilities
         private void GameplayBatteryCheck()
         {
             sisaBatteryText.text = "Sisa Battery " + FirebaseController.Instance.currentBattery + "/3";
+        }
+
+        public void RechargeBattery(TMP_InputField input)
+        {
+            if(input.text == password3Battery)
+                FirebaseController.Instance.SaveCurrentBattery(3);
+
+            if(input.text == password99Battery)
+                FirebaseController.Instance.SaveCurrentBattery(99);
+
+            input.text = string.Empty;
+            battery.SetActive(false);
+            battery.SetActive(true);
         }
     }
 }
