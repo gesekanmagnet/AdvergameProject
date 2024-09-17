@@ -29,6 +29,7 @@ namespace Beyaka.Bottle
             }
 
             GameController.Instance.invisibleTerrain.position = bottle.transform.position;
+            GameController.Instance.SetParticle(bottle.transform.position);
             GameController.Instance.Up();
         }
 

@@ -5,7 +5,7 @@ namespace Beyaka
 {
     public class GameController : MonoBehaviour
     {
-        [SerializeField] private Transform invisibleTerain;
+        [SerializeField] private Transform invisibleTerain, asap;
 
         private int score{ get; set; }
 
@@ -18,6 +18,7 @@ namespace Beyaka
         public static GameController Instance { get; private set; }
 
         public Transform invisibleTerrain { get { return invisibleTerain; } }
+        public Transform particle { get { return asap; } }
 
         private void Awake()
         {
@@ -28,6 +29,12 @@ namespace Beyaka
             }
 
             Instance = this;
+        }
+
+        public void SetParticle(Vector3 position)
+        {
+            particle.gameObject.SetActive(true);
+            particle.position = position;
         }
 
         public void Up()
