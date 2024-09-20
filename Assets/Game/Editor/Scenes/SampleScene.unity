@@ -3405,15 +3405,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8301676266639722725, guid: c042cc69b1cf52946b72b507ed1711ee, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.19
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 8301676266639722725, guid: c042cc69b1cf52946b72b507ed1711ee, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.19
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 8301676266639722725, guid: c042cc69b1cf52946b72b507ed1711ee, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.19
+      value: 0.23
       objectReference: {fileID: 0}
     - target: {fileID: 8301676266639722725, guid: c042cc69b1cf52946b72b507ed1711ee, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6445,11 +6445,9 @@ MonoBehaviour:
   capitSprite: {fileID: 8019401106573736187}
   bottlePrefab: {fileID: 4222299237860512103, guid: c042cc69b1cf52946b72b507ed1711ee, type: 3}
   boxIcons:
-  - {fileID: 21300000, guid: f4bcc7e3e7d4d4d4ca14e8d6021b4d03, type: 3}
   - {fileID: 21300000, guid: 58858210e611fda4b8cec3e418c301d9, type: 3}
+  - {fileID: 21300000, guid: f4bcc7e3e7d4d4d4ca14e8d6021b4d03, type: 3}
   - {fileID: 21300000, guid: 6ef63b7a423d2d148aaa96ff1ee2e583, type: 3}
-  - {fileID: 21300000, guid: 2cd2ac702085343419ce3688f804a6c3, type: 3}
-  - {fileID: 21300000, guid: d2b9489e6bc657446adb204f7b243036, type: 3}
   - {fileID: 21300000, guid: e449f0cde506cee4297363a5c93a5cdc, type: 3}
   - {fileID: 21300000, guid: bbd4fcbf018c2044282ea0de4217a27f, type: 3}
   - {fileID: 21300000, guid: 749ca06ad64d51144aa1cedb0c7c1ef8, type: 3}
@@ -6461,6 +6459,7 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5d8cccb6a4f40fb44b4f71522ad27f68, type: 3}
   - {fileID: 21300000, guid: f94deda8a9294d04a8a1ab96e6d9369c, type: 3}
   - {fileID: 21300000, guid: 31ca2b02f17dfd7499a2602bd3d7754d, type: 3}
+  - {fileID: 21300000, guid: d2b9489e6bc657446adb204f7b243036, type: 3}
 --- !u!1 &1834239003
 GameObject:
   m_ObjectHideFlags: 0
@@ -7332,8 +7331,8 @@ Transform:
   m_GameObject: {fileID: 4222299237113831658}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.494, z: 0}
-  m_LocalScale: {x: 1.4999999, y: 1.4999999, z: 1.4999999}
+  m_LocalPosition: {x: 0, y: -1.726, z: 0}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 1.8}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1224271937}

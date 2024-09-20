@@ -21660,8 +21660,8 @@ MonoBehaviour:
   stackConfirm: {fileID: 416177501}
   stackNotConfirm: {fileID: 1605758691}
   sisaBatteryText: {fileID: 0}
-  password3Battery: nekostanjing
-  password99Battery: nekostngentod
+  password3Battery: beyaka10
+  password99Battery: beyaka11
 --- !u!1 &1594217790
 GameObject:
   m_ObjectHideFlags: 0
