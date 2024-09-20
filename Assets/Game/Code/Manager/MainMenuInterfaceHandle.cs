@@ -9,7 +9,6 @@ namespace Beyaka.Manager
         [SerializeField] private TMP_Text welcomeText;
         [SerializeField] private GameObject loginButton, resumeButton;
         [SerializeField] private GameObject loginPanel, menuPanel;
-        [SerializeField] private Slider batterySlider;
         //[SerializeField] private GameObject betaPanel;
 
         private void Start()
@@ -59,7 +58,6 @@ namespace Beyaka.Manager
             welcomeText.text = user;
             loginButton.SetActive(false);
             resumeButton.SetActive(true);  
-            //batterySlider.value = FirebaseController.Instance.currentBattery;
         }
 
         private void UpdateUIFailure(string user)
