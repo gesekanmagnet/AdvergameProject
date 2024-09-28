@@ -11,6 +11,9 @@ public class FirebaseController : MonoBehaviour
     private static extern void GoogleSignIn();
 
     [DllImport("__Internal")]
+    private static extern void SaveUsername(string username);
+
+    [DllImport("__Internal")]
     private static extern void SaveScore(int score);
 
     [DllImport("__Internal")]
@@ -64,6 +67,12 @@ public class FirebaseController : MonoBehaviour
         currentActiveUsername = userName;
         GetCurrentScore();
         GetCurrentBattery();
+    }
+
+    public void SetUsername(string username)
+    {
+        currentActiveUsername = username;
+        SaveUsername(username);
     }
 
     public void OnGoogleSignInFail(string errorMessage)

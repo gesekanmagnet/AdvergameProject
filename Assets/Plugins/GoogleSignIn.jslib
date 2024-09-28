@@ -9,9 +9,22 @@ mergeInto(LibraryManager.library, {
         firebase.auth().signInWithPopup(provider).then(function(result) {
             var user = result.user;
             if (user) {
-                const userDoc = db.collection("users").doc(user.uid);
-                // Kirim nama pengguna ke Unity
-                Module.SendMessage('FirebaseController', 'OnGoogleSignInSuccess', user.displayName || 'Unknown User');
+                var userId = user.uid;
+                // Cek apakah ada username di Firestore (scores collection)
+                firebase.firestore().collection('scores').doc(userId).get()
+                .then(function(doc) {
+                    if (doc.exists && doc.data().igusername) {
+                        // Kirim username yang ditemukan ke Unity
+                        Module.SendMessage('FirebaseController', 'OnGoogleSignInSuccess', doc.data().igusername);
+                    } else {
+                        // Jika tidak ada username, kirim string kosong untuk meminta input dari pemain
+                        Module.SendMessage('FirebaseController', 'OnGoogleSignInSuccess', '');
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error getting user data:', error);
+                    Module.SendMessage('FirebaseController', 'OnGoogleSignInFail', error.message);
+                });
             }
         }).catch(function(error) {
             // Kirim pesan kesalahan ke Unity
@@ -31,7 +44,7 @@ mergeInto(LibraryManager.library, {
             firebase.firestore().collection('scores').doc(userId).set({
                 score: score, // Menyimpan skor
                 username: user.displayName || 'Unknown User' // Menyimpan nama pengguna
-            })
+            }, { merge: true })
             .then(function() {
                 console.log('Score and username saved successfully');
             })
@@ -87,7 +100,7 @@ mergeInto(LibraryManager.library, {
                 var leaderboardData = [];
                 querySnapshot.forEach(function(doc) {
                     leaderboardData.push({
-                        username: doc.data().username,
+                        username: doc.data().igusername,
                         score: doc.data().score
                     });
                 });
@@ -149,6 +162,34 @@ mergeInto(LibraryManager.library, {
         } else {
             console.log('No user is signed in.');
             Module.SendMessage('FirebaseController', 'OnReceiveBattery', 'No user');
+        }
+    },
+
+    SaveUsername: function(username) {
+        if (typeof firebase === 'undefined') {
+            console.error('Firebase is not defined.');
+            return;
+        }
+
+        console.log("Saving username:", username, "Type:", typeof username);
+
+        // Konversi string ke string (untuk menghindari encoding yang salah)
+        var userString = UTF8ToString(username); 
+
+        var user = firebase.auth().currentUser;
+        if (user) {
+            var userId = user.uid;
+            firebase.firestore().collection('scores').doc(userId).set({
+                igusername: userString
+            }, { merge: true })
+            .then(function() {
+                console.log('Username saved successfully');
+            })
+            .catch(function(error) {
+                console.error('Error saving username:', error);
+            });
+        } else {
+            console.log('No user is signed in.');
         }
     }
 });
