@@ -50,10 +50,10 @@ namespace Beyaka.Manager
 
         private bool IsSignedIn()
         {
-            if(FirebaseController.Instance.currentActiveUsername != null)
-                return true;
+            if(string.IsNullOrEmpty(FirebaseController.Instance.currentActiveUsername))
+                return false;
 
-            return false;
+            return true;
         }
 
         private void UpdateUI(string user)
@@ -80,13 +80,25 @@ namespace Beyaka.Manager
 
         public void Resume()
         {
-            if(!IsSignedIn() && string.IsNullOrEmpty(instagramUser.text))
-            {
+            //if(!IsSignedIn())
+            //{
+            //    return;
+            //}
+            //else
+            //{
+            //    if(string.IsNullOrEmpty(FirebaseController.Instance.currentActiveUsername))
+            //        FirebaseController.Instance.SetUsername(instagramUser.text);
+               
+            //    ShowMainMenu();
+            //}
+
+            if (instagramUser.gameObject.activeInHierarchy && string.IsNullOrEmpty(instagramUser.text))
                 return;
-            }
             else
             {
-                FirebaseController.Instance.SetUsername(instagramUser.text);
+                if (string.IsNullOrEmpty(FirebaseController.Instance.currentActiveUsername))
+                    FirebaseController.Instance.SetUsername(instagramUser.text);
+                    
                 ShowMainMenu();
             }
         }
