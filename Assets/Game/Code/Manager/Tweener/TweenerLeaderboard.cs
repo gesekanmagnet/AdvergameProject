@@ -25,6 +25,5 @@ namespace Beyaka.Manager
         {
             popup.DOMove(startPos, duration).SetEase(Ease.InExpo);
         }
-        
     }
 }

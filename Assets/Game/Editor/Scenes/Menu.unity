@@ -4231,8 +4231,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 2. Ketika memulai game, akan mengurangi total 1 Battery. Sehingga dalam
-    1 transaksi pemain berkesempatan memainkkan dengan total 3 game.
+  m_text: 2. Setiap memainkan game, akan mengurangi 1 Battery.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
   m_sharedMaterial: {fileID: 9170639416319240968, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
@@ -4390,6 +4389,109 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 280478759}
   m_CullTransparentMesh: 1
+--- !u!1 &282481100
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 282481104}
+  - component: {fileID: 282481103}
+  - component: {fileID: 282481102}
+  - component: {fileID: 282481101}
+  m_Layer: 5
+  m_Name: Canvas
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &282481101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282481100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc42784cf147c0c48a680349fa168899, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreReversedGraphics: 1
+  m_BlockingObjects: 0
+  m_BlockingMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+--- !u!114 &282481102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282481100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_UiScaleMode: 1
+  m_ReferencePixelsPerUnit: 100
+  m_ScaleFactor: 1
+  m_ReferenceResolution: {x: 1440, y: 3088}
+  m_ScreenMatchMode: 1
+  m_MatchWidthOrHeight: 0
+  m_PhysicalUnit: 3
+  m_FallbackScreenDPI: 96
+  m_DefaultSpriteDPI: 96
+  m_DynamicPixelsPerUnit: 1
+  m_PresetInfoIsWorld: 0
+--- !u!223 &282481103
+Canvas:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282481100}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_RenderMode: 0
+  m_Camera: {fileID: 0}
+  m_PlaneDistance: 100
+  m_PixelPerfect: 0
+  m_ReceivesEvents: 1
+  m_OverrideSorting: 0
+  m_OverridePixelPerfect: 0
+  m_SortingBucketNormalizedSize: 0
+  m_VertexColorAlwaysGammaSpace: 0
+  m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
+  m_SortingLayerID: 0
+  m_SortingOrder: 0
+  m_TargetDisplay: 0
+--- !u!224 &282481104
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 282481100}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1486544587}
+  - {fileID: 2111268104}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: 0}
+  m_Pivot: {x: 0, y: 0}
 --- !u!1 &283049702
 GameObject:
   m_ObjectHideFlags: 0
@@ -8220,7 +8322,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &568259407
 RectTransform:
   m_ObjectHideFlags: 0
@@ -11056,8 +11158,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 5. Peringkat 1-10 sebelum reset dinyatakan sebagai pemenang dan berhak
-    mendapatkan hadiah dari MORSE Board Game and Cafe.
+  m_text: 5. Peringkat 1 - 5 dinyatakan sebagai pemenang dan berhak mendapatkan hadiah
+    dari MORSE Board Game and Cafe.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
   m_sharedMaterial: {fileID: 9170639416319240968, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
@@ -11519,7 +11621,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &888332028
 RectTransform:
   m_ObjectHideFlags: 0
@@ -12866,8 +12968,6 @@ Transform:
   - {fileID: 512840608}
   - {fileID: 56121045}
   - {fileID: 265000197}
-  - {fileID: 2111268104}
-  - {fileID: 1486544587}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1058306957
@@ -13170,8 +13270,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 152271168}
-  - {fileID: 1908833142}
   - {fileID: 829657930}
+  - {fileID: 1908833142}
   - {fileID: 778286589}
   m_Father: {fileID: 317412657}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -19351,14 +19451,14 @@ RectTransform:
   m_GameObject: {fileID: 1486544586}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9820929, y: 2.9820929, z: 2.9820929}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1045751312}
+  m_Father: {fileID: 282481104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1213, y: 678.9375}
+  m_AnchoredPosition: {x: 1366, y: 1062}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1498391732
@@ -20002,8 +20102,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 1. Setiap pemain akan mendapatkan total 3 Battery setiap 1 transaksi di
-    Morse Board Game and Cafe
+  m_text: 1. Pemain akan mendapatkan total 5 Battery setiap transaksi, dengan memberikan
+    ponsel kepada kasir untuk dilakukan pengisian Battery.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
   m_sharedMaterial: {fileID: 9170639416319240968, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
@@ -22089,7 +22189,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 4. Leaderboard akan otomatis reset pada hari Minggu pukul 23:00
+  m_text: 4. Leaderboard akan dibersihkan pada hari Minggu pukul 23:00.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
   m_sharedMaterial: {fileID: 9170639416319240968, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
@@ -22627,7 +22727,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 3. Setiap skor akan direkap dan yang tertinggi akan ditampilkan di Leaderboard
+  m_text: 3. Skor akan direkap dan yang tertinggi akan ditampilkan di Leaderboard
     serta akan bersaing dengan pemain lainnya.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
@@ -23817,7 +23917,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1764749192
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24804,14 +24904,14 @@ RectTransform:
   m_GameObject: {fileID: 1827242625}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.670268, y: 3.670268, z: 3.670268}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2129025472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -167, y: 1051}
+  m_AnchoredPosition: {x: -520, y: 0}
   m_SizeDelta: {x: 43, y: 69}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1827242627
@@ -24857,7 +24957,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1827242628}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2129025473}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.TweenerPopup, Assembly-CSharp
+        m_MethodName: GoBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1827242628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25122,7 +25234,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1839221888
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25595,7 +25707,7 @@ GameObject:
   - component: {fileID: 1908833144}
   - component: {fileID: 1908833143}
   m_Layer: 5
-  m_Name: 3
+  m_Name: 6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -25640,8 +25752,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 6. Pihak MORSE Board Game and Cafe akan menghubungi kontak pemain berdasarkan
-    nomr yang diberikan pada laman awal.
+  m_text: 6. Pihak MORSE Board Game and Cafe akan mengunggah insta story dan menandai
+    username peringkat 1 - 5.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
   m_sharedMaterial: {fileID: 9170639416319240968, guid: d094f195e5b5927499b6aa8f2b7a2c5d, type: 2}
@@ -28897,14 +29009,14 @@ RectTransform:
   m_GameObject: {fileID: 2111268103}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.9820929, y: 2.9820929, z: 2.9820929}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1045751312}
+  m_Father: {fileID: 282481104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 245.61993, y: 678.9375}
+  m_AnchoredPosition: {x: 272, y: 1062}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &2111994488
@@ -29092,6 +29204,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2129025472}
+  - component: {fileID: 2129025473}
   m_Layer: 5
   m_Name: PopUp Ads
   m_TagString: Untagged
@@ -29117,9 +29230,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 1366, y: 1062}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2129025473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129025471}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8132bfd0b3653549a8460d610e770e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  startPoint: {fileID: 1486544587}
+  endPoint: {fileID: 2111268104}
+  isi: {fileID: 2145029705}
 --- !u!1 &2138445665
 GameObject:
   m_ObjectHideFlags: 0
@@ -29280,6 +29408,7 @@ GameObject:
   - component: {fileID: 2145029708}
   - component: {fileID: 2145029707}
   - component: {fileID: 2145029706}
+  - component: {fileID: 2145029709}
   m_Layer: 5
   m_Name: Isi
   m_TagString: Untagged
@@ -29296,14 +29425,14 @@ RectTransform:
   m_GameObject: {fileID: 2145029704}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3.670268, y: 3.670268, z: 3.670268}
-  m_ConstrainProportionsScale: 0
+  m_LocalScale: {x: 4, y: 4, z: 4}
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 2129025472}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 320.763, y: 1051}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 263, y: 87}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2145029706
@@ -29350,6 +29479,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 2129025473}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.TweenerPopup, Assembly-CSharp
+        m_MethodName: GoBack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 719570961}
         m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
         m_MethodName: SetActive
@@ -29398,6 +29539,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
+      - m_Target: {fileID: 1852641308}
+        m_TargetAssemblyTypeName: Beyaka.Manager.TweenerLeaderboard, Assembly-CSharp
+        m_MethodName: popup
+        m_Mode: 2
+        m_Arguments:
+          m_ObjectArgument: {fileID: 1948766018}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Transform, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
+      - m_Target: {fileID: 321167925}
+        m_TargetAssemblyTypeName: Beyaka.Manager.LeaderboardHandle, Assembly-CSharp
+        m_MethodName: OpenLeaderboard
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &2145029707
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -29436,6 +29601,27 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2145029704}
   m_CullTransparentMesh: 1
+--- !u!95 &2145029709
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2145029704}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a42a59c41085fb4b8fe6d359dec8dd6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 2
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -29454,3 +29640,4 @@ SceneRoots:
   - {fileID: 1045751312}
   - {fileID: 1591210807}
   - {fileID: 1813028757}
+  - {fileID: 282481104}
