@@ -10,6 +10,6 @@ public class DisplayBattey : MonoBehaviour
     private void OnEnable()
     {
         batterySlider.value = FirebaseController.Instance.currentBattery;
-        text.text = FirebaseController.Instance.currentBattery.ToString() + "/3";
+        text.text = FirebaseController.Instance.currentBattery.ToString() + "/" + batterySlider.maxValue;
     }
 }

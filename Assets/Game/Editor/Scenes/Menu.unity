@@ -7268,7 +7268,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 741278532}
+        m_TargetAssemblyTypeName: Beyaka.Manager.MainMenuInterfaceHandle, Assembly-CSharp
+        m_MethodName: CheckUsernameValidation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -10351,7 +10363,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 756573763}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1813028758}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.MorseLink, Assembly-CSharp
+        m_MethodName: OpenLink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://wa.me/6281233339590
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &756573763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -13617,7 +13641,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1063601967}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1813028758}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.MorseLink, Assembly-CSharp
+        m_MethodName: OpenLink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://gesekanmagnet.itch.io
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1063601967
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14878,7 +14914,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 3
+  m_MaxValue: 5
   m_WholeNumbers: 1
   m_Value: 3
   m_OnValueChanged:
@@ -15877,7 +15913,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1176651418}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1813028758}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.MorseLink, Assembly-CSharp
+        m_MethodName: OpenLink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://www.instagram.com/morseboardgame?igsh=NGllaWN1cG96NTIw
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1176651418
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15998,7 +16046,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1188074314}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1813028758}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.MorseLink, Assembly-CSharp
+        m_MethodName: OpenLink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://maps.app.goo.gl/kWhdRdsgFp91ZwVy6?g_st=com.google.maps.preview.copy
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1188074314
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17763,7 +17823,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1302488894}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1813028758}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.MorseLink, Assembly-CSharp
+        m_MethodName: OpenLink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://linktr.ee/morseboardgame?utm_source=linktree_profile_share&ltsid=b57df0d2-9a18-4efe-a575-419ffbffd86c
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1302488894
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22544,7 +22616,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1600542765}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1813028758}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.MorseLink, Assembly-CSharp
+        m_MethodName: OpenLink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://drive.google.com/file/d/1_JcYw053dNxfgPeXdfBhZ0kU_mS_xyBD/view?usp=drivesdk
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1600542765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25463,7 +25547,7 @@ MonoBehaviour:
   m_PreserveAspect: 1
   m_FillCenter: 1
   m_FillMethod: 0
-  m_FillAmount: 1
+  m_FillAmount: 0.6
   m_FillClockwise: 1
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
@@ -25817,6 +25901,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1807309984}
   m_CullTransparentMesh: 1
+--- !u!1 &1813028756
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1813028757}
+  - component: {fileID: 1813028758}
+  m_Layer: 0
+  m_Name: MorseLink
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1813028757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813028756}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1813028758
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1813028756}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00fd336fb93d50f40813207d8df8152e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1817041154
 GameObject:
   m_ObjectHideFlags: 0
@@ -26141,7 +26269,7 @@ MonoBehaviour:
   m_tintAllSprites: 0
   m_StyleSheet: {fileID: 0}
   m_TextStyleHashCode: -1183493901
-  m_overrideHtmlColors: 0
+  m_overrideHtmlColors: 1
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
@@ -29373,7 +29501,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2077203781}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1813028758}
+        m_TargetAssemblyTypeName: Beyaka.Utilities.MorseLink, Assembly-CSharp
+        m_MethodName: OpenLink
+        m_Mode: 5
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: https://www.tiktok.com/@morseboardgame?_t=8qOiRbUMEhL&_r=1
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2077203781
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -30293,3 +30433,4 @@ SceneRoots:
   - {fileID: 2022709504}
   - {fileID: 1045751312}
   - {fileID: 1591210807}
+  - {fileID: 1813028757}

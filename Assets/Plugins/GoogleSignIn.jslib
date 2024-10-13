@@ -11,7 +11,7 @@ mergeInto(LibraryManager.library, {
             if (user) {
                 var userId = user.uid;
                 // Cek apakah ada username di Firestore (scores collection)
-                firebase.firestore().collection('scores').doc(userId).get()
+                firebase.firestore().collection('players').doc(userId).get()
                 .then(function(doc) {
                     if (doc.exists && doc.data().igusername) {
                         // Kirim username yang ditemukan ke Unity
@@ -43,7 +43,6 @@ mergeInto(LibraryManager.library, {
             var userId = user.uid; // ID pengguna saat ini
             firebase.firestore().collection('scores').doc(userId).set({
                 score: score, // Menyimpan skor
-                username: user.displayName || 'Unknown User' // Menyimpan nama pengguna
             }, { merge: true })
             .then(function() {
                 console.log('Score and username saved successfully');
@@ -97,15 +96,26 @@ mergeInto(LibraryManager.library, {
             .limit(10)
             .get()
             .then(function(querySnapshot) {
-                var leaderboardData = [];
+                var leaderboardDataPromises = [];
                 querySnapshot.forEach(function(doc) {
-                    leaderboardData.push({
-                        username: doc.data().igusername,
-                        score: doc.data().score
-                    });
+                    var userId = doc.id;
+                    var score = doc.data().score;
+
+                    // Ambil username dari koleksi players berdasarkan userId
+                    var promise = firebase.firestore().collection('players').doc(userId).get()
+                        .then(function(playerDoc) {
+                            return {
+                                username: playerDoc.exists ? playerDoc.data().igusername : 'Unknown User',
+                                score: score
+                            };
+                        });
+
+                    leaderboardDataPromises.push(promise);
                 });
-                // Kirim data leaderboard ke Unity dalam bentuk JSON
-                Module.SendMessage('FirebaseController', 'OnReceiveTopScores', JSON.stringify(leaderboardData));
+
+                Promise.all(leaderboardDataPromises).then(function(leaderboardData) {
+                    Module.SendMessage('FirebaseController', 'OnReceiveTopScores', JSON.stringify(leaderboardData));
+                });
             })
             .catch(function(error) {
                 console.error('Error getting leaderboard:', error);
@@ -122,7 +132,7 @@ mergeInto(LibraryManager.library, {
         var user = firebase.auth().currentUser;
         if (user) {
             var userId = user.uid;
-            firebase.firestore().collection('scores').doc(userId).set({
+            firebase.firestore().collection('players').doc(userId).set({
                 battery: battery // Simpan nilai battery
             }, { merge: true }) // Use merge to avoid overwriting other fields
             .then(function() {
@@ -145,14 +155,14 @@ mergeInto(LibraryManager.library, {
         var user = firebase.auth().currentUser;
         if (user) {
             var userId = user.uid;
-            firebase.firestore().collection('scores').doc(userId).get()
+            firebase.firestore().collection('players').doc(userId).get()
             .then(function(doc) {
                 if (doc.exists) {
-                    var battery = doc.data().battery || 0; // Set default to 0 if battery is not found
+                    var battery = doc.data().battery; // Set default to 0 if battery is not found
                     // Kirim nilai battery ke Unity
                     Module.SendMessage('FirebaseController', 'OnReceiveBattery', battery.toString());
                 } else {
-                    Module.SendMessage('FirebaseController', 'OnReceiveBattery', '0');
+                    Module.SendMessage('FirebaseController', 'OnReceiveBattery', '3');
                 }
             })
             .catch(function(error) {
@@ -165,13 +175,11 @@ mergeInto(LibraryManager.library, {
         }
     },
 
-    SaveUsername: function(username) {
+    CheckUsername: function(username) {
         if (typeof firebase === 'undefined') {
             console.error('Firebase is not defined.');
             return;
         }
-
-        console.log("Saving username:", username, "Type:", typeof username);
 
         // Konversi string ke string (untuk menghindari encoding yang salah)
         var userString = UTF8ToString(username); 
@@ -179,7 +187,38 @@ mergeInto(LibraryManager.library, {
         var user = firebase.auth().currentUser;
         if (user) {
             var userId = user.uid;
-            firebase.firestore().collection('scores').doc(userId).set({
+            firebase.firestore().collection('players')
+                .where('igusername', '==', userString)
+                .get()
+                .then(function(querySnapshot) {
+                    if (!querySnapshot.empty) {
+                        console.log('Username already exists. Please choose another one.');
+                        Module.SendMessage('FirebaseController', 'OnReceiveUsername', 'Username already exists');
+                    } else {
+                        Module.SendMessage('FirebaseController', 'OnReceiveUsername', '');
+                        console.log('Username saved successfully');
+                    }
+                })
+                .catch(function(error) {
+                    console.error('Error checking username:', error);
+                });
+        } else {
+            console.log('No user is signed in.');
+        }
+    },
+
+    SaveUsername: function(username) {
+        if (typeof firebase === 'undefined') {
+            console.error('Firebase is not defined.');
+            return;
+        }
+
+        var userString = UTF8ToString(username); 
+
+        var user = firebase.auth().currentUser;
+        if (user) {
+            var userId = user.uid;
+            firebase.firestore().collection('players').doc(userId).set({
                 igusername: userString
             }, { merge: true })
             .then(function() {
@@ -191,5 +230,10 @@ mergeInto(LibraryManager.library, {
         } else {
             console.log('No user is signed in.');
         }
+    },
+
+    OpenLink: function(url) {
+        var link = UTF8ToString(url);
+        window.open(link, '_blank');
     }
 });

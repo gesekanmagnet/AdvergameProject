@@ -14,6 +14,9 @@ public class FirebaseController : MonoBehaviour
     private static extern void SaveUsername(string username);
 
     [DllImport("__Internal")]
+    private static extern void CheckUsername(string username);
+
+    [DllImport("__Internal")]
     private static extern void SaveScore(int score);
 
     [DllImport("__Internal")]
@@ -28,12 +31,20 @@ public class FirebaseController : MonoBehaviour
     [DllImport("__Internal")]
     private static extern void GetBattery();
 
+    [DllImport("__Internal")]
+    private static extern void OpenLink(string url);
+
+    private bool usernameIsExist;
+
     public delegate void LoginAction(string userName);
     public LoginAction OnLoginSuccess { get; set; } = delegate { };
     public LoginAction OnLoginFailure { get; set; } = delegate { };
 
     public delegate void LeaderboardUpdateAction(List<ScoreEntry> leaderboard);
     public LeaderboardUpdateAction OnLeaderboardUpdate { get; set; } = delegate { };
+
+    public delegate void UsernameAction(bool x);
+    public UsernameAction OnUsernameRegister { get; set; } = delegate { };
 
     public static FirebaseController Instance { get; private set; }
 
@@ -42,6 +53,18 @@ public class FirebaseController : MonoBehaviour
     public bool easyMode { get; private set; }
     public int currentScore { get; private set; }
     public int currentBattery { get; private set; }
+    public bool usernameExist
+    {
+        get => usernameIsExist;
+        private set
+        {
+            if(usernameIsExist != value)
+            {
+                usernameIsExist = value;
+                OnUsernameRegister(usernameIsExist);
+            }
+        }
+    }
 
     private void Awake()
     {
@@ -73,6 +96,16 @@ public class FirebaseController : MonoBehaviour
     {
         currentActiveUsername = username;
         SaveUsername(username);
+    }
+
+    public void IsUsernameValid(string username)
+    {
+        CheckUsername(username);
+    }
+
+    public void OnReceiveUsername(string username)
+    {
+        usernameExist = username == "Username already exists" ? true : false;
     }
 
     public void OnGoogleSignInFail(string errorMessage)
@@ -150,6 +183,11 @@ public class FirebaseController : MonoBehaviour
     {
         SaveBattery(battery);
         currentBattery = battery;
+    }
+
+    public void OpenNewTab(string url)
+    {
+        OpenLink(url);
     }
 }
 

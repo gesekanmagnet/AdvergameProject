@@ -23,12 +23,14 @@ namespace Beyaka.Manager
         {
             FirebaseController.Instance.OnLoginSuccess += UpdateUI;
             FirebaseController.Instance.OnLoginFailure += UpdateUIFailure;
+            FirebaseController.Instance.OnUsernameRegister += CheckUsername;
         }
 
         private void OnDisable()
         {
             FirebaseController.Instance.OnLoginSuccess -= UpdateUI;
             FirebaseController.Instance.OnLoginFailure -= UpdateUIFailure;
+            FirebaseController.Instance.OnUsernameRegister -= CheckUsername;
         }
 
         private void ShowMainMenu()
@@ -45,6 +47,20 @@ namespace Beyaka.Manager
                 loginPanel.SetActive(true);
                 menuPanel.SetActive(false);
                 //betaPanel.SetActive(true);
+            }
+        }
+
+        private void CheckUsername(bool x)
+        {
+            if (x)
+            {
+                welcomeText.color = Color.red;
+                welcomeText.text = "Nama pengguna telah digunakan";
+            }
+            else
+            {
+                welcomeText.color = Color.white;
+                welcomeText.text = "Nama pengguna tersedia";
             }
         }
 
@@ -80,27 +96,26 @@ namespace Beyaka.Manager
 
         public void Resume()
         {
-            //if(!IsSignedIn())
-            //{
-            //    return;
-            //}
-            //else
-            //{
-            //    if(string.IsNullOrEmpty(FirebaseController.Instance.currentActiveUsername))
-            //        FirebaseController.Instance.SetUsername(instagramUser.text);
-               
-            //    ShowMainMenu();
-            //}
-
-            if (instagramUser.gameObject.activeInHierarchy && string.IsNullOrEmpty(instagramUser.text))
+            if (instagramUser.gameObject.activeInHierarchy && string.IsNullOrEmpty(instagramUser.text) || FirebaseController.Instance.usernameExist)
                 return;
-            else
+            else if(instagramUser.gameObject.activeInHierarchy && !string.IsNullOrEmpty(instagramUser.text))
             {
-                if (string.IsNullOrEmpty(FirebaseController.Instance.currentActiveUsername))
-                    FirebaseController.Instance.SetUsername(instagramUser.text);
-                    
+                FirebaseController.Instance.SetUsername(instagramUser.text);
                 ShowMainMenu();
             }
+            else
+                ShowMainMenu();
+        }
+
+        public void CheckUsernameValidation(string username)
+        {
+            if (string.IsNullOrEmpty(instagramUser.text))
+            {
+                welcomeText.text = "Mohon input username instagram anda";
+                return;
+            }
+
+            FirebaseController.Instance.IsUsernameValid(username);
         }
     }
 }

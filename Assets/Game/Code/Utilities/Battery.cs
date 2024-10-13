@@ -35,13 +35,13 @@ namespace Beyaka.Utilities
 
         private void GameplayBatteryCheck()
         {
-            sisaBatteryText.text = "Sisa Battery " + FirebaseController.Instance.currentBattery + "/3";
+            sisaBatteryText.text = "Sisa Battery " + FirebaseController.Instance.currentBattery + "/5";
         }
 
         public void RechargeBattery(InputField input)
         {
             if(input.text == password3Battery)
-                FirebaseController.Instance.SaveCurrentBattery(3);
+                FirebaseController.Instance.SaveCurrentBattery(5);
 
             if(input.text == password99Battery)
                 FirebaseController.Instance.SaveCurrentBattery(99);
