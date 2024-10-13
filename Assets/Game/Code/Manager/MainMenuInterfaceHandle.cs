@@ -55,12 +55,12 @@ namespace Beyaka.Manager
             if (x)
             {
                 welcomeText.color = Color.red;
-                welcomeText.text = "Nama pengguna telah digunakan";
+                welcomeText.text = "Username telah digunakan";
             }
             else
             {
                 welcomeText.color = Color.white;
-                welcomeText.text = "Nama pengguna tersedia";
+                welcomeText.text = "Username pengguna tersedia";
             }
         }
 
@@ -76,7 +76,7 @@ namespace Beyaka.Manager
         {
             if(string.IsNullOrEmpty(user))
             {
-                welcomeText.text = "Mohon input username instagram anda";
+                welcomeText.text = "Masukan Username instagram anda, sebagai Username dalam Game";
                 instagramUser.gameObject.SetActive(true);
             }
             else
@@ -111,7 +111,7 @@ namespace Beyaka.Manager
         {
             if (string.IsNullOrEmpty(instagramUser.text))
             {
-                welcomeText.text = "Mohon input username instagram anda";
+                welcomeText.text = "Masukan Username instagram anda, sebagai Username dalam Game";
                 return;
             }
 
